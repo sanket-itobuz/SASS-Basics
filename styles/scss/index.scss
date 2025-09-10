@@ -8,6 +8,7 @@
 $base-color: rgb(8, 189, 129);
 $background-color: white;
 $cursor: pointer;
+$button-radius: 5px;
 
 .navbar {
   height: 50px;
@@ -101,34 +102,38 @@ $search-box-height: 30px;
 }
 
 .navigation {
-  $button-radius: 5px;
   $button-space: 15px;
   $margining: 120px;
 
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 1fr 300px 1fr;
   height: 70px;
 
   .prev-button {
     display: grid;
-    justify-items: center;
-    align-content: center;
-    background-color: $base-color;
-    color: $background-color;
-    margin: $button-space;
-    margin-right: $margining;
-    padding: $button-space;
-    border-radius: $button-radius;
-  }
-  .no-buttons {
-    display: grid;
-    grid-auto-flow: column;
-    justify-items: center;
+    justify-items: start;
     align-content: center;
 
     div {
-      color: $background-color;
       background-color: $base-color;
+      color: $background-color;
+      height: 30px;
+      margin-left: 15px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $button-radius;
+    }
+  }
+  .no-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    div {
+      color: $background-color;
+      background-color: lightgrey;
       height: 30px;
       width: 30px;
       display: grid;
@@ -136,17 +141,26 @@ $search-box-height: 30px;
       align-content: center;
       border-radius: $button-radius;
     }
+    .active {
+      background-color: $base-color;
+    }
   }
   .next-button {
     display: grid;
-    justify-items: center;
+    justify-items: end;
     align-content: center;
-    background-color: $base-color;
-    color: $background-color;
-    margin: $button-space;
-    padding: $button-space;
-    margin-left: $margining;
-    border-radius: $button-radius;
+
+    div {
+      background-color: $base-color;
+      color: $background-color;
+      height: 30px;
+      margin-right: 15px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $button-radius;
+    }
   }
 }
 
@@ -159,6 +173,7 @@ $search-box-height: 30px;
     "section"
     "footer";
   .header {
+    height: 200px;
     grid-area: header;
     background: lightgray;
     padding: 1rem;
@@ -166,6 +181,7 @@ $search-box-height: 30px;
     font-weight: bold;
   }
   .footer {
+    height: 200px;
     grid-area: footer;
     background: lightgray;
     padding: 1rem;
@@ -240,6 +256,90 @@ $search-box-height: 30px;
 }
 
 footer {
+  $footer-color: rgb(128, 128, 128);
+
   background-color: lightgray;
-  height: 300px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+
+  .left-section {
+    height: 200px;
+    width: 300px;
+
+    h2 {
+      color: $base-color;
+      padding-bottom: 20px;
+    }
+    div {
+      font-size: small;
+      color: $footer-color;
+    }
+    h5 {
+      margin-top: 50px;
+      font-weight: lighter;
+      color: $footer-color;
+    }
+  }
+  .right-section {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .right-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .link-header {
+        color: $base-color;
+      }
+      .links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        div {
+          height: 20px;
+          width: 20px;
+          background-color: $background-color;
+          line-height: 20px;
+          text-align: center;
+          border-radius: $button-radius;
+        }
+      }
+    }
+    .right-section-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .right-section-body-left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        color: $footer-color;
+        font-size: small;
+      }
+      .right-section-body-right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        color: $footer-color;
+        font-size: small;
+      }
+    }
+    .right-section-foot {
+      color: $footer-color;
+      text-align: end;
+      font-size: small;
+    }
+  }
 }
