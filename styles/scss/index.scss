@@ -151,12 +151,95 @@ $search-box-height: 30px;
 }
 
 .grids {
+  height: 100vh;
   display: grid;
-  gap: 20px;
-
-  div {
-    height: 60px;
-    width: 100%;
-    background-color: red;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "section"
+    "footer";
+  .header {
+    grid-area: header;
+    background: lightgray;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
   }
+  .footer {
+    grid-area: footer;
+    background: lightgray;
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  .section {
+    grid-area: section;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas: "navbar content";
+    .navbar {
+      grid-area: navbar;
+      background-color: peachpuff;
+      padding: 1rem;
+      height: auto;
+    }
+    .content {
+      grid-area: content;
+      display: grid;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "upper"
+        "middle"
+        "lower";
+      gap: 10px;
+      padding: 10px;
+      .upper {
+        grid-area: upper;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "upper-left upper-center upper-right";
+        gap: 10px;
+        .upper-left {
+          grid-area: upper-left;
+          background: grey;
+          padding: 1rem;
+          text-align: center;
+          color: white;
+        }
+        .upper-center {
+          grid-area: upper-center;
+          background: red;
+          padding: 1rem;
+          text-align: center;
+          color: white;
+        }
+        .upper-right {
+          grid-area: upper-right;
+          background: lightgray;
+          padding: 1rem;
+          text-align: center;
+          color: white;
+        }
+      }
+      .middle {
+        grid-area: middle;
+        background: blue;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+      }
+      .lower {
+        grid-area: lower;
+        background: orange;
+        padding: 1rem;
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: lightgray;
+  height: 300px;
 }
