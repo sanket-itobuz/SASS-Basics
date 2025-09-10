@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+$base-color: rgb(8, 189, 129);
+$background-color: white;
+$cursor: pointer;
+
+.navbar {
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: $background-color;
+
+  h2 {
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: $base-color;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 10px;
+
+    li {
+      font-weight: bold;
+      color: $base-color;
+    }
+
+    li:hover {
+      cursor: $cursor;
+      text-decoration: underline orange;
+    }
+  }
+}
+
+$search-box-padding: 5px;
+$search-box-height: 30px;
+
+.bg-image {
+  height: 50vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/013/089/133/small_2x/abstract-soft-focus-sunset-field-landscape-of-white-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg");
+  background-size: cover;
+
+  .search {
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    grid-auto-flow: row;
+    justify-content: center;
+
+    .search-field {
+      height: $search-box-height;
+      input {
+        height: $search-box-height;
+        border: none;
+        size: 5px;
+        background-color: $background-color;
+      }
+      input::placeholder {
+        color: $base-color;
+        padding-left: 3px;
+      }
+    }
+    .search-button {
+      height: $search-box-height;
+      color: $background-color;
+      background-color: $base-color;
+      line-height: $search-box-height;
+      padding-left: $search-box-padding;
+      padding-right: $search-box-padding;
+    }
+  }
+}
+
+.details {
+  $padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 8px;
+
+  h2 {
+    color: $base-color;
+    padding: $padding;
+  }
+  h5 {
+    display: grid;
+    justify-content: end;
+    color: $base-color;
+    padding: $padding;
+  }
+}
+
+.navigation {
+  $button-radius: 5px;
+  $button-space: 15px;
+  $margining: 120px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  height: 70px;
+
+  .prev-button {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    background-color: $base-color;
+    color: $background-color;
+    margin: $button-space;
+    margin-right: $margining;
+    padding: $button-space;
+    border-radius: $button-radius;
+  }
+  .no-buttons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-content: center;
+
+    div {
+      color: $background-color;
+      background-color: $base-color;
+      height: 30px;
+      width: 30px;
+      display: grid;
+      justify-items: center;
+      align-content: center;
+      border-radius: $button-radius;
+    }
+  }
+  .next-button {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    background-color: $base-color;
+    color: $background-color;
+    margin: $button-space;
+    padding: $button-space;
+    margin-left: $margining;
+    border-radius: $button-radius;
+  }
+}
+
+.grids {
+  display: grid;
+  gap: 20px;
+
+  div {
+    height: 60px;
+    width: 100%;
+    background-color: red;
+  }
+}

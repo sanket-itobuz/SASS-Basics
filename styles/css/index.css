@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: white;
+}
+.navbar h2 {
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: rgb(8, 189, 129);
+}
+.navbar ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  padding-top: 10px;
+}
+.navbar ul li {
+  font-weight: bold;
+  color: rgb(8, 189, 129);
+}
+.navbar ul li:hover {
+  cursor: pointer;
+  text-decoration: underline orange;
+}
+
+.bg-image {
+  height: 50vh;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/013/089/133/small_2x/abstract-soft-focus-sunset-field-landscape-of-white-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg");
+  background-size: cover;
+}
+.bg-image .search {
+  display: grid;
+  grid-template-columns: repeat(2, 0fr);
+  grid-auto-flow: row;
+  justify-content: center;
+}
+.bg-image .search .search-field {
+  height: 30px;
+}
+.bg-image .search .search-field input {
+  height: 30px;
+  border: none;
+  size: 5px;
+  background-color: white;
+}
+.bg-image .search .search-field input::placeholder {
+  color: rgb(8, 189, 129);
+  padding-left: 3px;
+}
+.bg-image .search .search-button {
+  height: 30px;
+  color: white;
+  background-color: rgb(8, 189, 129);
+  line-height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 8px;
+}
+.details h2 {
+  color: rgb(8, 189, 129);
+  padding: 5px;
+}
+.details h5 {
+  display: grid;
+  justify-content: end;
+  color: rgb(8, 189, 129);
+  padding: 5px;
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  height: 70px;
+}
+.navigation .prev-button {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  background-color: rgb(8, 189, 129);
+  color: white;
+  margin: 15px;
+  margin-right: 120px;
+  padding: 15px;
+  border-radius: 5px;
+}
+.navigation .no-buttons {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  align-content: center;
+}
+.navigation .no-buttons div {
+  color: white;
+  background-color: rgb(8, 189, 129);
+  height: 30px;
+  width: 30px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  border-radius: 5px;
+}
+.navigation .next-button {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  background-color: rgb(8, 189, 129);
+  color: white;
+  margin: 15px;
+  padding: 15px;
+  margin-left: 120px;
+  border-radius: 5px;
+}
+
+.grids {
+  display: grid;
+  gap: 20px;
+}
+.grids div {
+  height: 60px;
+  width: 100%;
+  background-color: red;
+}
+
+/*# sourceMappingURL=index.css.map */
